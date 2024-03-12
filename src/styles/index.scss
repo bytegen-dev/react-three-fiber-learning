@@ -20,6 +20,10 @@ body{
         font-family: monospace, sans-serif;
         font-size: 24px;
 
+        @media screen and (max-width: 380px) {
+            font-size: 20px;
+        }
+
         span{
             color: #777;
         }
