@@ -19,6 +19,17 @@ body{
         height: fit-content;
         font-family: monospace, sans-serif;
         font-size: 24px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 5vw;
+        z-index: 10;
+        background-color: #000c;
+        text-align: center;
+        gap: 10px;
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid #fff2;
 
         @media screen and (max-width: 380px) {
             font-size: 20px;
