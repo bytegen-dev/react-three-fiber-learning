@@ -22,6 +22,7 @@ const Cube = ({position, size, color})=>{
 const Sphere = ({position, args, size, color})=>{
   const cubeRef = useRef()
   const [isHovered, setIsHovered] = useState(false)
+  const [isClicked, setIsClicked] = useState(false)
   const speed = isHovered ? 0.2 : 2.0
   useFrame((state, delta) =>{
     const deltaChange = delta || 100000
@@ -38,9 +39,11 @@ const Sphere = ({position, args, size, color})=>{
       }}  onPointerLeave={(e)=>{
         e.stopPropagation()
         setIsHovered(false)
+      }} onClick={()=>{
+        setIsClicked(!isClicked)
       }}>
           <sphereGeometry args={args}  />
-          <meshStandardMaterial color={isHovered ? color : "#fff"} wireframe />
+          <meshStandardMaterial color={isHovered ? (isClicked ? color : "blue") : "#fff"} wireframe />
       </mesh>
   )
 }
